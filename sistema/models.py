@@ -12,7 +12,7 @@ class Usuario(models.Model):
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.nome
+        return self.nomegit
 
 class Filme(models.Model):
     nome = models.CharField(max_length=50)
