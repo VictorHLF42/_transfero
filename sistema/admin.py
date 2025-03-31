@@ -5,7 +5,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_display = ('nome', 'sobrenome', 'email', 'data_cadastro', 'ativo')
 
 class FilmeAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'ano', 'estudio', 'data_cadastro')
+    list_display = ('nome', 'ano', 'estudio', 'data_cadastro', 'genero')
 
 class GeneroAdmin(admin.ModelAdmin):
     list_display = ('nome', 'data_cadastro')
