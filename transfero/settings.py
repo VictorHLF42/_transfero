@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sistema',
     'usuarios',
+    'filmes',
+    
 ]
 
 MIDDLEWARE = [
@@ -111,8 +113,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'base_static',
 )
-MEDIA_URL = 'media/' #é onde ficam o caminho que o usuário irá enviar.
+MEDIA_URL = 'media/' #é onde o endereco url inicial onde os arquivos de midia serão salvos.
+MEDIA_ROOT = BASE_DIR/ 'media' # Um caminho onde os aqrquivos de midia serão salvos.
 
+STATIC_URL= 'static/' # é o endereco url inicial aonde estão os arquivos estáticos.
+STATIC_ROOT = BASE_DIR / 'static' # um caminho para onde os arquivos estáticos são coletados
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
