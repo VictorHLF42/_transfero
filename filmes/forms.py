@@ -1,7 +1,7 @@
 from django import forms
-from .models import Filme  # Agora esse import funcionará
+from sistema.models import Filme 
 
 class FilmeForm(forms.ModelForm):
     class Meta:
         model = Filme
-        fields = '__all__'
+        fields = ['nome', 'ano', 'estudio', 'genero', 'sinopse',]
