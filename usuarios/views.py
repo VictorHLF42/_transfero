@@ -30,3 +30,9 @@ def criarUsuario(request):
         'usuarios/cadastrar.html',
         {'form': form}
     )
+
+def esqueci(request):
+    return render(
+        request,
+        'usuarios/esqueci_a_senha.html'
+    )

@@ -30,3 +30,15 @@ def listarFilmes(request):
         'filmes/listar.html',
         context,
     )
+
+def filmes(request):
+    return render(
+        request,
+        'filmes/filmes.html',
+    )
+
+def detalhes(request):
+    return render(
+        request,
+        'filmes/filme_detalhe.html',
+    )

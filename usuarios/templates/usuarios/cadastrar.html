@@ -1,21 +1,82 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamVibe - Cadastro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Cadastro de Usuário</h1>
+<body class="bg-black text-white font-sans">
 
-    <form method="post" enctype="multipart/form-data">
-         {% csrf_token %} 
+  <div class="flex min-h-screen">
 
-         {{ form.as_p }}
-        <button type="submit">Cadastrar</button>
-    </form>
+    <!-- Painel Esquerdo - Formulário -->
+    <div class="w-1/2 bg-black flex flex-col justify-center px-16 py-10 relative">
+      <form class="max-w-md mx-auto w-full">
+        <h2 class="text-3xl font-semibold mb-8">Formulário de Cadastro</h2>
 
+        <div class="mb-6">
+          <label class="block mb-2 text-sm">Nome completo</label>
+          <input type="text" placeholder="Digite seu nome completo"
+                 class="w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+        </div>
+
+        <div class="mb-6">
+          <label class="block mb-2 text-sm">E-mail</label>
+          <input type="email" placeholder="Digite seu e-mail"
+                 class="w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+        </div>
+
+        <div class="mb-6">
+          <label class="block mb-2 text-sm">Senha</label>
+          <input type="password" placeholder="Digite sua senha"
+                 class="w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+        </div>
+
+        <div class="flex justify-between items-center mb-6 text-sm">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2 accent-red-600" />
+            Lembrar-me
+          </label>
+          <a href="{% url 'esqueci' %}"class="text-blue-400 hover:underline">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit"
+                class="bg-red-600 hover:bg-red-700 w-full py-3 rounded-full text-lg font-medium">
+          Cadastrar
+        </button>
+
+        <p class="mt-6 text-sm text-center">
+          Já tem uma conta?
+          <a href="{% url 'login' %}" class="text-red-600 hover:underline">Entrar</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Painel Direito - Informações -->
+    <div class="w-1/2 bg-cover bg-center relative flex flex-col justify-center px-16 py-10"
+         style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('movies-bg.jpg');">
+         <img src="{% static '/global/assets/images/logo-white.png' %}" alt="Logo StreamVibe" class="w-48 mb-8" />
+
+
+      <a href="{% url 'index' %}" class="absolute top-6 right-10 text-sm text-white hover:underline">
+        Voltar para a Página Inicial 🏠
+      </a>
+
+      <h1 class="text-4xl font-bold mb-6">Página de Cadastro</h1>
+      <p class="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed">
+        Para acessar sua conta e aproveitar todos os recursos e serviços especiais do nosso site, 
+        faça login com suas informações pessoais. Se você ainda não tem uma conta, pode se cadastrar 
+        e aproveitar nossos benefícios exclusivos.
+      </p>
+
+      <a href="{% url 'login' %}"class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full w-fit text-lg">
+        Página de Login
+      </a>
+    </div>
+
+  </div>
 
 </body>
 </html>

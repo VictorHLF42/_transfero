@@ -4,6 +4,8 @@ from filmes import views
 urlpatterns = [
     path('cadastrar/', views.cadastrarFilme, name='cadastrarfilme'),
     path('listar/', views.listarFilmes, name='listarfilmes'),
+    path('filmes/', views.filmes, name='filmes'),
+    path('detalhes/', views.detalhes, name='detalhes'),
 ]
 
 

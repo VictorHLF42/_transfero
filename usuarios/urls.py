@@ -4,6 +4,7 @@ from usuarios import views
 urlpatterns = [
     path('cadastrar/', views.criarUsuario, name='criarusuario'),
     path('login/', views.login, name='login'),
+    path('esqueci/', views.esqueci, name='esqueci'),
 ]
 
 # 127.0.0.1:8000/usuario

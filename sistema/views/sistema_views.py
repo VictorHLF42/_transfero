@@ -5,11 +5,15 @@ from django.shortcuts import render
 def index(request):
     return render(
         request,
-        'sistema/sistema.html',
+        'sistema/index.html',
+    )
+
+def suporte(request):
+    return render(
+        request,
+        'sistema/suporte.html',
     )
 
 
 
 
-# REQUEST
-# RESPONSE

@@ -1,100 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamVibe - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
 
-<head> {% include "partials/_head.html" %} </head>
-<style>
-  .login-body {
-    background-color: #0e0e10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-  }
-  .login-container {
-    background-color: #1a1a1d;
-    padding: 48px;
-    box-shadow: 0 0 200px rgba(176, 6, 16, 1);
-    text-align: center;
-    max-width: 500px;
-  }
-  .login-container h2 {
-    margin-bottom: 8px;
-    font-size: 32px;
-  }
-  .login-container p {
-    color: #bbb;
-    margin-bottom: 32px;
-  }
-  .login-form input {
-    display: block;
-    width: 100%;
-    padding: 6px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: none;
-    background-color: #2c2c31;
-    color: #fff;
-  }
+  <div class="flex min-h-screen">
+    
+    <!-- Painel Esquerdo -->
+    <div class="w-1/2 bg-cover bg-center relative flex flex-col justify-center px-16 py-10"
+         style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('movies-bg.jpg');">
+      <img src="{% static '/global/assets/images/logo-white.png' %}" alt="Logo StreamVibe" class="w-48 mb-8" />
 
-  input:focus {
-    border-color: #e509d3;
+      <h1 class="text-4xl font-bold mb-6">Página de Login</h1>
+      <p class="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed">
+        Para acessar sua conta e aproveitar todos os recursos e serviços especiais do nosso site, 
+        faça login com suas informações pessoais. Se você ainda não tem uma conta, pode se cadastrar 
+        e aproveitar nossos benefícios exclusivos.
+      </p>
 
-  }
+      <a href="{% url 'criarusuario' %}" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full w-fit text-lg">
+        Página de Cadastro
+      </a>
+    </div>
 
-  .btn-primary {
-    background-color: #e50914;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  .btn-primary:hover {
-    background-color: #b00610;
-  }
+    <!-- Painel Direito -->
+    <div class="w-1/2 bg-black flex flex-col justify-center px-16 py-10 relative">
+      <a href="{% url 'index' %}" class="absolute top-6 right-10 text-sm text-white hover:underline">
+        Voltar para a Página Inicial 🏠
+      </a>
 
-  .login-footer {
-    margin-top: 20px;
-    color: #aaa;
-    font-size: 14px;
-  }
-  .login-footer a {
-    text-decoration: none;
-    color: #e50914;
-  }
-</style>
-<body>
-  <header> {% include "partials/_header.html" %} </header>
+      <form class="max-w-md mx-auto w-full">
+        <h2 class="text-3xl font-semibold mb-8">Formulário de Login</h2>
 
+        <div class="mb-6">
+          <label class="block mb-2 text-sm">E-mail</label>
+          <input type="email" placeholder="Digite seu e-mail"
+                 class="w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+        </div>
 
+        <div class="mb-6">
+          <label class="block mb-2 text-sm">Senha</label>
+          <input type="password" placeholder="Digite sua senha"
+                 class="w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500" />
+        </div>
 
+        <div class="flex justify-between items-center mb-6 text-sm">
+          <label class="flex items-center">
+            <input type="checkbox" class="mr-2 accent-red-600" />
+            Lembrar-me
+          </label>
+          <a href="{% url 'esqueci' %}" class="text-blue-400 hover:underline">Esqueceu sua senha?</a>
+        </div>
 
-  <main class="login-body">
-    <div class="login-container">
-      <h2>Seja bem-vindo</h2>
-      <p>Informe suas credenciais para avaliar seus filmes e séries prediletos.</p>
-      <form action="POST" class="login-form">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Senha" required>
-        <button class="btn-primary" type="submit">
-          Logar
+        <button type="submit"
+                class="bg-red-600 hover:bg-red-700 w-full py-3 rounded-full text-lg font-medium">
+          Entrar
         </button>
-        <p class="login-footer">
-          Não tem uma conta? <a href="#">Cadastre-se</a>
-        </p>
       </form>
     </div>
- 
-  </main>
+  </div>
 
-
-
-
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <footer>{% include "partials/_footer.html" %} </footer>
 </body>
-
 </html>
