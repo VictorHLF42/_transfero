@@ -35,31 +35,6 @@ def login(request):
             return redirect('login')
     
     return render(request, 'usuarios/login.html', {'form': form}) 
-    
-
-# Classe responsável por cadastrar um novo usuário
-# def cadastrar(request):
-#     form = CadastroForms()
-    
-#     if form.is_valid():
-#         nome=form['nome_cadastro'].value()
-#         email=form['email'].value()
-#         senha=form['senha'].value()
-
-#         if User.objects.filter(username=nome).exists():
-#             messages.error(request, 'Usuário já existente')
-#             return redirect('cadastrar')
-
-#         usuario = User.objects.create_user(
-#             username=nome,
-#             email=email,
-#             password=senha
-#         )
-#         usuario.save()
-#         messages.success(request, 'Cadastro efetuado com sucesso!')
-#         return redirect('login')
-
-#     return render(request, 'usuarios/cadastrar.html', {'form': form})       
 
 
 # Classe responsável por enviar e-mail de esqueci a senha
@@ -102,3 +77,9 @@ def cadastrar(request):
         form = CadastroForms()
 
     return render(request, 'usuarios/cadastrar.html', {'form': form})
+
+def perfil(request):
+    return render(
+        request,
+        'usuarios/perfil.html'
+    )
