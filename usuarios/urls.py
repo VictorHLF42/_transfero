@@ -2,11 +2,8 @@ from django.urls import path
 from usuarios import views
 
 urlpatterns = [
-    path('cadastrar/', views.criarUsuario, name='criarusuario'),
+    path('cadastrar/', views.cadastrar, name='cadastrar'),
     path('login/', views.login, name='login'),
     path('esqueci/', views.esqueci, name='esqueci'),
+    path('logout/', views.logout, name='logout'),
 ]
-
-# 127.0.0.1:8000/usuario
-# 127.0.0.1:8000/usuario/login
-# 127.0.0.1:8000/usuario/cadastro
