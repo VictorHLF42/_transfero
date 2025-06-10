@@ -1,19 +1,19 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 
-from sistema.models import Usuario
+# from sistema.models import Usuario
 
 
-def listarUsuarios(request):
-    usuarios = Usuario.objects.all() 
+# def listarUsuarios(request):
+#     usuarios = Usuario.objects.all() 
 
-    context = {
-        'usuarios': usuarios,
-    }
+#     context = {
+#         'usuarios': usuarios,
+#     }
 
-    return render(
-        request,
-        'usuarios/listar.html',
-        context,
-    )
+#     return render(
+#         request,
+#         'usuarios/listar.html',
+#         context,
+#     )
 
 

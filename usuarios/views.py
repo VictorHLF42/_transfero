@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from usuarios.forms import CadastroForms, LoginForms, UsuarioForm
+from usuarios.forms import CadastroForms, LoginForms
 
 from django.contrib.auth.models import User #App responsável por acessar os usuários
 
@@ -37,28 +37,28 @@ def login(request):
     
 
 # Classe responsável por cadastrar um novo usuário
-def cadastrar(request):
-    form = CadastroForms()
+# def cadastrar(request):
+#     form = CadastroForms()
     
-    if form.is_valid():
-        nome=form['nome_cadastro'].value()
-        email=form['email'].value()
-        senha=form['senha'].value()
+#     if form.is_valid():
+#         nome=form['nome_cadastro'].value()
+#         email=form['email'].value()
+#         senha=form['senha'].value()
 
-        if User.objects.filter(username=nome).exists():
-            messages.error(request, 'Usuário já existente')
-            return redirect('cadastrar')
+#         if User.objects.filter(username=nome).exists():
+#             messages.error(request, 'Usuário já existente')
+#             return redirect('cadastrar')
 
-        usuario = User.objects.create_user(
-            username=nome,
-            email=email,
-            password=senha
-        )
-        usuario.save()
-        messages.success(request, 'Cadastro efetuado com sucesso!')
-        return redirect('login')
+#         usuario = User.objects.create_user(
+#             username=nome,
+#             email=email,
+#             password=senha
+#         )
+#         usuario.save()
+#         messages.success(request, 'Cadastro efetuado com sucesso!')
+#         return redirect('login')
 
-    return render(request, 'usuarios/cadastrar.html', {'form': form})       
+#     return render(request, 'usuarios/cadastrar.html', {'form': form})       
 
 
 # Classe responsável por enviar e-mail de esqueci a senha
@@ -74,3 +74,31 @@ def logout(request):
     auth.logout()
     messages.success(request, 'Logout realizado com sucesso!')
     return redirect('usuario/login')
+
+def cadastrar(request):
+    form = CadastroForms()
+
+    if request.method == 'POST':
+        form = CadastroForms(request.POST)
+
+        if form.is_valid():
+            nome = form.cleaned_data['nome_cadastro']
+            email = form.cleaned_data['email']
+            senha = form.cleaned_data['senha']
+
+            if User.objects.filter(username=nome).exists():
+                messages.error(request, 'Usuário já existente')
+                return redirect('cadastrar')
+
+            usuario = User.objects.create_user(
+                username=nome,
+                email=email,
+                password=senha
+            )
+            usuario.save()
+            messages.success(request, 'Cadastro efetuado com sucesso!')
+            return redirect('login')
+    else:
+        form = CadastroForms()
+
+    return render(request, 'usuarios/cadastrar.html', {'form': form})

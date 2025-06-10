@@ -8,8 +8,9 @@ class LoginForms(forms.Form):
         max_length=100,
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500',
                 'placeholder': 'Digite o seu nome de login',
+                
             }
         )
     )
@@ -19,7 +20,7 @@ class LoginForms(forms.Form):
         max_length=70,
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500',
                 'placeholder': 'Digite a sua senha',
             }
         )
@@ -33,7 +34,7 @@ class CadastroForms(forms.Form):
         max_length=100,
         widget=forms.TextInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500',
                 'placeholder': 'Digite o seu nome de cadastro',
             }
         )
@@ -44,21 +45,21 @@ class CadastroForms(forms.Form):
         max_length=100,
         widget=forms.EmailInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500',
                 'placeholder': 'Digite o seu e-mail',
             }
         )
     )
-    senha_1=forms.CharField(
+    senha=forms.CharField(
         label='Senha',
         required=True,
         max_length=70,
         widget=forms.PasswordInput(
             attrs={
-                'class': 'form-control',
+                'class': 'form-control w-full px-4 py-3 bg-gray-800 text-white rounded border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500',
                 'placeholder': 'Digite a sua senha',
             }
-        )
+        ),
     )
     
     

@@ -3,9 +3,9 @@ from django.contrib import admin
 from sistema import models
 
 # Aqui fica o registro do Usuário
-@admin.register(models.Usuario)
-class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'sobrenome', 'email', 'ativo',)
+# @admin.register(models.Usuario)
+# class UsuarioAdmin(admin.ModelAdmin):
+#     list_display = ('id', 'nome', 'sobrenome', 'email', 'ativo',)
 
 # Aqui fica o registro do Filme
 @admin.register(models.Filme)
