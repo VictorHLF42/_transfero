@@ -17,7 +17,7 @@
     <div class="logo">
       <a href="{% url 'index' %}">
         <img src="{% static '/global/assets/images/logo-white.png' %}" alt="Logo da StreamBox">
-    </a>
+      </a>
     </div>
     <nav>
       <ul class="nav-links">
@@ -25,7 +25,7 @@
         <li><a href="{% url 'filmes' %}">Filmes</a></li>
         <li><a href="{% url 'suporte' %}">Suporte</a></li>
         <li><a href="#">Minha lista</a></li>
-        
+
       </ul>
     </nav>
 
@@ -37,7 +37,18 @@
             d="M18 7.5V10.5M18 10.5V13.5M18 10.5H21M18 10.5H15M12.75 6.375C12.75 8.23896 11.239 9.75 9.375 9.75C7.51104 9.75 6 8.23896 6 6.375C6 4.51104 7.51104 3 9.375 3C11.239 3 12.75 4.51104 12.75 6.375ZM3.00092 19.2343C3.00031 19.198 3 19.1615 3 19.125C3 15.6042 5.85418 12.75 9.375 12.75C12.8958 12.75 15.75 15.6042 15.75 19.125V19.1276C15.75 19.1632 15.7497 19.1988 15.7491 19.2343C13.8874 20.3552 11.7065 21 9.375 21C7.04353 21 4.86264 20.3552 3.00092 19.2343Z"
             stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg></a>
-   
+      <a href="{% url 'logout' %}">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 3H21V21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M10 17L15 12L10 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M3 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+
+
     </div>
   </header>
 
@@ -68,8 +79,8 @@
             <path d="M8 5v14l11-7z" />
           </svg>
           <a href="{% url 'filmes' %}">
-          Comece a assistir agora
-        </a>
+            Comece a assistir agora
+          </a>
         </button>
       </div>
     </section>
@@ -85,15 +96,15 @@
           <p>Avatar: The Way of Water</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>John Wick 4</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>Stranger Things</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>The Batman</p>
         </div>
       </div>
@@ -104,19 +115,19 @@
       <h2> Recomendado Para Você</h2>
       <div class="movie-grid">
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>Dune</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>Breaking Bad</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>Interstellar</p>
         </div>
         <div class="movie-card">
-             <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
+          <img src="{% static '/global/assets/images/series-banner.jpg' %}" alt="Card serie" />
           <p>Peaky Blinders</p>
         </div>
       </div>

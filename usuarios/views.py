@@ -7,6 +7,7 @@ from django.contrib.auth.models import User #App responsável por acessar os usu
 from django.contrib import auth #App responsável pela autenticação
 
 from django.contrib import messages #App responsável pela mensagens de retorno para o cliente
+from django.contrib.auth import logout as auth_logout
 
 
 # Classe referente as informações da autenticação
@@ -71,9 +72,8 @@ def esqueci(request):
 
 # Classe responável por realizar o logout
 def logout(request):
-    auth.logout()
-    messages.success(request, 'Logout realizado com sucesso!')
-    return redirect('usuario/login')
+    auth_logout(request)
+    return redirect('login')
 
 def cadastrar(request):
     form = CadastroForms()
