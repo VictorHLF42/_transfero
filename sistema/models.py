@@ -33,7 +33,7 @@ class Filme(models.Model):
     genero = models.ForeignKey(Genero, on_delete=models.SET_NULL, null=True, blank=True)
     sinopse = models.TextField()
     data_cadastro = models.DateField(default=timezone.now)
-
+    publicado = models.BooleanField(default=True)
     def __str__(self):
         return self.nome
     

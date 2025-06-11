@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from sistema.models import Filme
 from filmes.forms import FilmeForm
 
@@ -31,16 +31,45 @@ def listarFilmes(request):
         context,
     )
 
-def filmes(request):
+# View ref ao detalhes do filme
+def filmes(request, filme_id):
+    fotografia = get_object_or_404(Filme, pk=filme_id)
     return render(
         request,
-        'filmes/filmes.html',
+        "filmes/filme_detalhe.html",
+        {"fotografia": fotografia}
     )
 
-def detalhes(request):
-    return render(
-        request,
-        'filmes/filme_detalhe.html',
+# view ref a opção de buscar filmes:
+def buscar(request):
+    fotografias = Filme.objects.order_by('data_cadastro').filter(publicada=True)
+
+    if "buscar" in request.GET:
+        nome_a_buscar = request.GET['buscar']
+        if nome_a_buscar:
+            fotografias = fotografias.filter(nome__icontains=nome_a_buscar)
+    return render (
+        request, 'filmes/buscar.html', {"cards": fotografias}
     )
 
 
+
+
+
+# Criar a view buscar, filmes
+
+
+
+
+
+# def detalhes(request):
+#     return render(
+#         request,
+#         'filmes/filme_detalhe.html',
+#     )
+
+# def filmes(request):
+#     return render(
+#         request,
+#         'filmes/filmes.html',
+#     )
