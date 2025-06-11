@@ -42,3 +42,5 @@ def detalhes(request):
         request,
         'filmes/filme_detalhe.html',
     )
+
+
