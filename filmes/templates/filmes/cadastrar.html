@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Cadastro de Filmes</title>
 </head>
 <body>
@@ -11,5 +12,20 @@
         {{ form.as_p }}
         <button type="submit"> Cadastrar </button>
     </form>
+=======
+    <title>Cadastrar Filmes</title>
+</head>
+<body>
+    <h1>Cadastro de usúario</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        
+        {{ form.as_p}}
+        <button type="submit">Cadastrar filme</button>
+    </form>
+        
+    
+
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600
 </body>
 </html>

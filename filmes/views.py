@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import get_object_or_404, render, redirect
 from sistema.models import Filme
 from filmes.forms import FilmeForm
@@ -9,6 +10,18 @@ def cadastrarFilme(request):
         if form.is_valid():
             form.save()   
             return redirect('listar')
+=======
+from django.shortcuts import render, redirect
+from filmes.forms import FilmeForm
+
+def cadastrarFilme(request):
+    if request.method == 'POST':
+        form = FilmeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('listarfilmes/')
+    
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600
     else:
         form = FilmeForm()
 
@@ -17,6 +30,7 @@ def cadastrarFilme(request):
         'filmes/cadastrar.html',
         {'form': form},
     )
+<<<<<<< HEAD
 
 def listarFilmes(request):
     filmes = Filme.objects.all()
@@ -73,3 +87,5 @@ def buscar(request):
 #         request,
 #         'filmes/filmes.html',
 #     )
+=======
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+<<<<<<< HEAD
 from usuarios.forms import CadastroForms, LoginForms
 
 from django.contrib.auth.models import User #App responsável por acessar os usuários
@@ -82,4 +83,34 @@ def perfil(request):
     return render(
         request,
         'usuarios/perfil.html'
+=======
+from usuarios.forms import UsuarioForm
+
+# Create your views here.
+
+def login(request):
+    return render(
+        request,
+        'login.html'
+    )
+def criarUsurio(request):
+    # Verificar se a requisição será do tipo GET ou POST 
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST, request.FILES)
+        #Será criada um objeto Usuario(model) com os dados enviados 
+        # post -> sao os campos do forms (nome, sobrenome) preenchidos.
+        # files -> contém os arquivos ou e/imagens.
+        if form.is_valid(): # Se os dados forem válidos, são salvos no BD.
+            form.save()
+            return redirect('/usuario/login')
+
+    
+    else: 
+        # se a requisição for GET, exibir o formulário de cadastro
+        form = UsuarioForm()
+    return render(
+        request,
+        'cadastro.html',
+        {'form': form}
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600
     )

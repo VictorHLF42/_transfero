@@ -1,4 +1,5 @@
 from django.urls import path
+<<<<<<< HEAD
 from filmes import views
 
 urlpatterns = [
@@ -11,3 +12,10 @@ urlpatterns = [
 ]
 
 
+=======
+from filmes import views  # Note o nome correto da view
+
+urlpatterns = [
+    path('cadastrarfilme/', views.cadastrarFilme),
+]
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600

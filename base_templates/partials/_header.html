@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load static %}
 
 <!-- Início do header -->
@@ -28,3 +29,52 @@
  
   </div>
 </header>
+=======
+<header class="navbar">
+    <div class="logo">StreamBox</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">filmes</a></li>
+            <li><a href="#">Séries</a></li>
+            <li><a href="#">Minha Lista</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .navbar{
+        display: flex   ;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1a1d;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 1rem 2rem;
+
+
+    }
+
+    .logo{
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #b00610;
+    }
+    .nav-links{
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+    .nav-links li a {
+        font-weight: 600;
+        color: #ccc;
+        text-decoration: none;
+
+    }
+    .nav-links li a:hover {
+        color: #fff;
+    }
+    
+</style>
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600

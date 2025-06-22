@@ -1,0 +1,26 @@
+{% block content %}
+    <h1>Lista de Filmes</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ano</th>
+                <th>Estúdio</th>
+                <th>Gênero</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for filme in filmes %}
+            <tr>
+                <td>{{ filme.id }}</td>
+                <td>{{ filme.nome }}</td>
+                <td>{{ filme.ano }}</td>
+                <td>{{ filme.estudio }}</td>
+                <td>{{ filme.genero }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

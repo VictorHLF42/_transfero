@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django import forms # Importa o módulo dos formulários do django.
 
 # Classe referente ao formulário de login (nome e senha)
@@ -65,3 +66,12 @@ class CadastroForms(forms.Form):
     
     
     
+=======
+from django import forms # importação o módlo dos formulários do django.
+from sistema.models import Usuario    
+
+class UsuarioForm(forms.ModelForm):
+    class Meta:
+        model = Usuario #define qual é o model que o form representa.
+        fields = ['nome', 'sobrenome', 'cpf', 'telefone', 'email', 'endereco', 'imagem',] #sâo os campos que serão exibidos no form (HTML)
+>>>>>>> eb3e681827ada180133916620ee3ac2c19629600
