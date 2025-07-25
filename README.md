@@ -46,7 +46,7 @@ Este projeto full-stack está sendo construído com uma combinação poderosa de
 
 **Banco de Dados:**
 * **SQL (Sistema Gerenciador de Banco de Dados Relacional):** Para persistência dos dados de usuários, filmes e avaliações.
-    * **[Especifique aqui qual SQL vocês estão usando, ex: PostgreSQL, MySQL, SQLite]**
+    
 
 **Outras Ferramentas:**
 * **Git:** Sistema de controle de versão distribuído.
